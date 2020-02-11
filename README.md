@@ -26,12 +26,23 @@ Requirements: [minikube](https://minikube.sigs.k8s.io/docs/start/) and
 minikube start
 kubectl create -f deploy/app.yml
 ```
+or
+```
+minikube start
+kubectl create -f deploy/deployment.yml
+```
 
 ## How to check app in cluster
 ```
 kubectl expose pod helloworld --type=NodePort --name=helloworld-service
+```
+or
+```
+kubectl create -f deploy/service.yml
+```
+Then get url to ping server with browser / curl command / Postman / etc.
+```
 minikube service helloworld-service --url
 ```
-Then using url that you got ping server with browser / curl command / Postman / etc.
 ## Docker Hub image link
 [irynalian/kubernetes](https://hub.docker.com/r/irynalian/kubernetes)
